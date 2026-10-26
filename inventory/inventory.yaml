@@ -3,7 +3,7 @@ all:
     ansible_user: ansible
     ansible_port: 22
   children:
-    single-node:
+    single_node:
       hosts:
         template:
           ansible_host: 127.0.0.1
