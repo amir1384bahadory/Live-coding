@@ -2,6 +2,7 @@ all:
   vars:
     ansible_user: ansible
     ansible_port: 22
+    ssh_disable_systemd_socket_activation: false
   children:
     single_node:
       hosts:

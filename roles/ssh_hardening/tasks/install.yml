@@ -14,6 +14,7 @@
   when:
     - ssh_server_hardening | bool
     - ssh_server_enabled | bool
+    - ssh_disable_systemd_socket_activation | bool
     - (ansible_facts.distribution == 'Ubuntu' and ansible_facts.distribution_major_version is version('22.04', '>=')) or
       (ansible_facts.os_family == 'Debian' and ansible_facts.distribution_major_version is version('12', '>='))
 

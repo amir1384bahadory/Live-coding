@@ -1,7 +1,7 @@
 ---
 
 # true if IPv6 is needed
-network_ipv6_enable: true # sshd + ssh
+network_ipv6_enable: false # sshd + ssh
 
 # Paths of the config files
 ssh_client_config_file: /etc/ssh/ssh_config # ssh
@@ -57,10 +57,10 @@ ssh_login_grace_time: 30s
 
 # Specifies the maximum number of authentication attempts permitted per connection.
 # Once the number of failures reaches half this value, additional failures are logged.
-ssh_max_auth_retries: 2
+ssh_max_auth_retries: 3
 
 # Specifies the maximum number of open sessions permitted from a given connection
-ssh_max_sessions: 10
+ssh_max_sessions: 2
 
 ssh_client_alive_interval: 300 # sshd
 ssh_client_alive_count: 3 # sshd
@@ -160,7 +160,7 @@ ssh_print_pam_motd: false # sshd
 ssh_print_last_log: false # sshd
 
 # false to disable serving ssh warning banner before authentication is allowed
-ssh_banner: false # sshd
+ssh_banner: true # sshd
 
 # path to file with ssh warning banner
 ssh_banner_path: /etc/ssh/banner.txt
@@ -188,6 +188,8 @@ ssh_server_match_user: false # sshd
 
 # list of hashes (containing group and rules) to generate Match Group blocks for
 ssh_server_match_group: false # sshd
+
+ssh_disable_systemd_socket_activation: true
 
 # list of hashes (containing addresses/subnets and rules) to generate Match Address blocks for
 ssh_server_match_address: false # sshd
